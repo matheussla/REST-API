@@ -12,8 +12,8 @@ public class ContaDTO implements Serializable {
 	private String agencia;
 	private String cpf;
 	private Boolean status;
-	private String dataCriacao;
-	private String dataAtualizacao;
+	private Long dataCriacao;
+	private Long dataAtualizacao;
 	
 	public ContaDTO() {
 	}
@@ -68,19 +68,19 @@ public class ContaDTO implements Serializable {
 		this.status = status;
 	}
 
-	public String getDataCriacao() {
+	public Long getDataCriacao() {
 		return dataCriacao;
 	}
 
-	public void setDataCriacao(String dataCriacao) {
+	public void setDataCriacao(Long dataCriacao) {
 		this.dataCriacao = dataCriacao;
 	}
 
-	public String getDataAtualizacao() {
+	public Long getDataAtualizacao() {
 		return dataAtualizacao;
 	}
 
-	public void setDataAtualizacao(String dataAtualizacao) {
+	public void setDataAtualizacao(Long dataAtualizacao) {
 		this.dataAtualizacao = dataAtualizacao;
 	}
 	

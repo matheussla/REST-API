@@ -8,6 +8,4 @@ import com.mathe.restbanco.domain.Conta;
 @Repository
 public interface ContaRepository extends MongoRepository<Conta, String> {
 	
-	
-
 }

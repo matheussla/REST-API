@@ -15,14 +15,14 @@ public class Conta implements Serializable{
 	private String agencia;
 	private String cpf;
 	private Boolean status;
-	private String dataCriacao;
-	private String dataAtualizacao;
+	private Long dataCriacao;
+	private Long dataAtualizacao;
 	
 	public Conta() {	
 	}
 
-	public Conta(String id, String numero, String agencia, String cpf, Boolean status, String dataCriacao,
-			String dataAtualizacao) {
+	public Conta(String id, String numero, String agencia, String cpf, Boolean status, Long dataCriacao,
+			Long dataAtualizacao) {
 		super();
 		this.id = id;
 		this.numero = numero;
@@ -73,19 +73,19 @@ public class Conta implements Serializable{
 		this.status = status;
 	}
 
-	public String getDataCriacao() {
+	public Long getDataCriacao() {
 		return dataCriacao;
 	}
 
-	public void setDataCriacao(String dataCriacao) {
+	public void setDataCriacao(Long dataCriacao) {
 		this.dataCriacao = dataCriacao;
 	}
 
-	public String getDataAtualizacao() {
+	public Long getDataAtualizacao() {
 		return dataAtualizacao;
 	}
 
-	public void setDataAtualizacao(String dataAtualizacao) {
+	public void setDataAtualizacao(Long dataAtualizacao) {
 		this.dataAtualizacao = dataAtualizacao;
 	}
 
