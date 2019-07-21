@@ -37,13 +37,9 @@ public class ContaDTO implements Serializable {
 		agencia = obj.getAgencia();
 		cpf = obj.getCpf();
 		status = obj.getStatus();
-		dataCriacao = startDate();
-		dataAtualizacao = startDate();	
+		dataCriacao = obj.getDataCriacao();
+		dataAtualizacao = obj.getDataAtualizacao();	
 	}
-
-	private LocalDateTime startDate() {
-        return LocalDateTime.now();
-    }
 	
 	public String getId() {
 		return id;
