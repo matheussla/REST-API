@@ -31,10 +31,15 @@ public class ContaService {
 	public Conta insert(Conta obj) {
 		return repo.insert(obj);
 	}
-	
-	public void delete(String id) {
-		findById(id);
-		repo.deleteById(id);
+	//Delete by Id
+	//public void delete(String id) {
+		//findById(id);
+		//repo.deleteById(id);
+	//}
+	public Conta delete(Conta obj) {
+		Conta newObj = findById(obj.getId());
+		updateData(newObj, obj);
+		return repo.save(newObj);
 	}
 	
 	public Conta update(Conta obj) {
@@ -52,6 +57,12 @@ public class ContaService {
 	}
 	
 	public Conta fromDTO(ContaDTO objDto) {
-		return new Conta(objDto.getId(), objDto.getNumero(), objDto.getAgencia(), objDto.getCpf(), objDto.getStatus(),objDto.getDataCriacao(), objDto.getDataAtualizacao());
+		boolean status = true;
+		return new Conta(objDto.getId(), objDto.getNumero(), objDto.getAgencia(), objDto.getCpf(), status,objDto.getDataCriacao(), objDto.getDataAtualizacao());
+	}
+	
+	public Conta deleteFromDTO(ContaDTO objDto) {
+		boolean status = false;
+		return new Conta(objDto.getId(), objDto.getNumero(), objDto.getAgencia(), objDto.getCpf(), status,objDto.getDataCriacao(), objDto.getDataAtualizacao());
 	}
 }
