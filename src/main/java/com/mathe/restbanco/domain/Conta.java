@@ -1,9 +1,11 @@
 package com.mathe.restbanco.domain;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+
 
 @Document(collection = "conta")
 public class Conta implements Serializable{
@@ -15,14 +17,14 @@ public class Conta implements Serializable{
 	private String agencia;
 	private String cpf;
 	private Boolean status;
-	private Long dataCriacao;
-	private Long dataAtualizacao;
+	private LocalDateTime dataCriacao;
+	private LocalDateTime dataAtualizacao;
 	
 	public Conta() {	
 	}
 
-	public Conta(String id, String numero, String agencia, String cpf, Boolean status, Long dataCriacao,
-			Long dataAtualizacao) {
+	public Conta(String id, String numero, String agencia, String cpf, Boolean status, LocalDateTime dataCriacao,
+			LocalDateTime dataAtualizacao) {
 		super();
 		this.id = id;
 		this.numero = numero;
@@ -32,7 +34,7 @@ public class Conta implements Serializable{
 		this.dataCriacao = dataCriacao;
 		this.dataAtualizacao = dataAtualizacao;
 	}
-
+	
 	public String getId() {
 		return id;
 	}
@@ -73,20 +75,24 @@ public class Conta implements Serializable{
 		this.status = status;
 	}
 
-	public Long getDataCriacao() {
+	public LocalDateTime getDataCriacao() {
 		return dataCriacao;
 	}
 
-	public void setDataCriacao(Long dataCriacao) {
+	public void setDataCriacao(LocalDateTime dataCriacao) {
 		this.dataCriacao = dataCriacao;
 	}
 
-	public Long getDataAtualizacao() {
+	public LocalDateTime getDataAtualizacao() {
 		return dataAtualizacao;
 	}
 
-	public void setDataAtualizacao(Long dataAtualizacao) {
+	public void setDataAtualizacao(LocalDateTime dataAtualizacao) {
 		this.dataAtualizacao = dataAtualizacao;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
 	@Override

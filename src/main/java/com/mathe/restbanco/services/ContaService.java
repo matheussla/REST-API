@@ -52,6 +52,6 @@ public class ContaService {
 	}
 	
 	public Conta fromDTO(ContaDTO objDto) {
-		return new Conta(objDto.getId(), objDto.getNumero(), objDto.getAgencia(), objDto.getCpf(), objDto.getStatus(), objDto.getDataCriacao(), objDto.getDataAtualizacao());
+		return new Conta(objDto.getId(), objDto.getNumero(), objDto.getAgencia(), objDto.getCpf(), objDto.getStatus(),objDto.getDataCriacao(), objDto.getDataAtualizacao());
 	}
 }
