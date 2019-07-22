@@ -21,6 +21,10 @@ example: https://rest-api-math.herokuapp.com/contas/5d3511dca339c400041b1811
 DELETE: https://rest-api-math.herokuapp.com/contas/"use id"  
 example: https://rest-api-math.herokuapp.com/contas/5d3511dca339c400041b1811
 
+Postman:
+Postman have options in the "Body" section. If "raw" is chosen, then there is a drop down where "JSON (application/json)" works.
+https://i.stack.imgur.com/33xZl.png
+
 ENDPOINT:
 id : String gerado automaticamente ao criar
 numero: String -> Somente digitos e no máximo 6 caracteres 
