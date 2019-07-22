@@ -22,6 +22,7 @@ DELETE: https://rest-api-math.herokuapp.com/contas/"use id"
 example: https://rest-api-math.herokuapp.com/contas/5d3511dca339c400041b1811
 
 Postman:
+No Environment
 Postman have options in the "Body" section. If "raw" is chosen, then there is a drop down where "JSON (application/json)" works.
 https://i.stack.imgur.com/33xZl.png
 
