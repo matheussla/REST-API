@@ -38,7 +38,7 @@ public class ContaService {
 	//}
 	public Conta delete(Conta obj) {
 		Conta newObj = findById(obj.getId());
-		updateData(newObj, obj);
+		updateStatus(newObj, obj);
 		return repo.save(newObj);
 	}
 	
@@ -53,6 +53,12 @@ public class ContaService {
 		newObj.setAgencia(obj.getAgencia());
 		newObj.setCpf(obj.getCpf());
 		newObj.setStatus(obj.getStatus());
+		newObj.setDataAtualizacao(obj.getDataAtualizacao());
+	}
+	
+	public void updateStatus(Conta newObj, Conta obj) {
+		boolean status = false;
+		newObj.setStatus(status);
 		newObj.setDataAtualizacao(obj.getDataAtualizacao());
 	}
 	
