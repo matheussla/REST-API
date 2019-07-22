@@ -58,13 +58,8 @@ public class ContaResource {
 	
 	@DeleteMapping(value="/{id}")
 	public ResponseEntity<Void> delete(@RequestBody @Valid ContaDTO objDto, @PathVariable String id){
-		Conta conta = service.findById(id);
 		Conta obj = service.deleteFromDTO(objDto);
 		obj.setId(id);
-		obj.setNumero(conta.getNumero());
-		obj.setAgencia(conta.getAgencia());
-		obj.setCpf(conta.getCpf());
-		obj.setDataCriacao(conta.getDataCriacao());
 		obj = service.delete(obj);
 		return ResponseEntity.noContent().build();
 	}
