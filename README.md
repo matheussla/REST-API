@@ -6,18 +6,18 @@ GET(by ID): https://rest-api-math.herokuapp.com/contas/"use id"
 example: https://rest-api-math.herokuapp.com/contas/5d3511dca339c400041b1811
 
 POST: https://rest-api-math.herokuapp.com/contas
-
+{
     "numero": "613564",
     "agencia": "4251",
     "cpf": "47507133593"
-    
+}    
 PUT: https://rest-api-math.herokuapp.com/contas/"use id"
 example: https://rest-api-math.herokuapp.com/contas/5d3511dca339c400041b1811
-
+{
     "numero": "613564",
     "agencia": "4251",
     "cpf": "47507133593"
-    
+}   
 DELETE: https://rest-api-math.herokuapp.com/contas/"use id"  
 example: https://rest-api-math.herokuapp.com/contas/5d3511dca339c400041b1811
 
