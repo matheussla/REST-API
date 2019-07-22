@@ -1,9 +1,13 @@
 package com.mathe.restbanco.domain;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 
 @Document(collection = "conta")
 public class Conta implements Serializable{
@@ -15,24 +19,30 @@ public class Conta implements Serializable{
 	private String agencia;
 	private String cpf;
 	private Boolean status;
-	private String dataCriacao;
-	private String dataAtualizacao;
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy HH:mm:ss")
+	private LocalDateTime dataCriacao;
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy HH:mm:ss")
+	private LocalDateTime dataAtualizacao;
 	
 	public Conta() {	
 	}
 
-	public Conta(String id, String numero, String agencia, String cpf, Boolean status, String dataCriacao,
-			String dataAtualizacao) {
+	public Conta(String id, String numero, String agencia, String cpf, Boolean status, LocalDateTime dataCriacao,
+			LocalDateTime dataAtualizacao) {
 		super();
 		this.id = id;
 		this.numero = numero;
 		this.agencia = agencia;
 		this.cpf = cpf;
 		this.status = status;
-		this.dataCriacao = dataCriacao;
-		this.dataAtualizacao = dataAtualizacao;
+		this.dataCriacao = startDate();
+		this.dataAtualizacao = startDate();
 	}
-
+	
+	private LocalDateTime startDate() {
+        return LocalDateTime.now();
+    }
+	
 	public String getId() {
 		return id;
 	}
@@ -73,20 +83,24 @@ public class Conta implements Serializable{
 		this.status = status;
 	}
 
-	public String getDataCriacao() {
+	public LocalDateTime getDataCriacao() {
 		return dataCriacao;
 	}
 
-	public void setDataCriacao(String dataCriacao) {
+	public void setDataCriacao(LocalDateTime dataCriacao) {
 		this.dataCriacao = dataCriacao;
 	}
 
-	public String getDataAtualizacao() {
+	public LocalDateTime getDataAtualizacao() {
 		return dataAtualizacao;
 	}
 
-	public void setDataAtualizacao(String dataAtualizacao) {
+	public void setDataAtualizacao(LocalDateTime dataAtualizacao) {
 		this.dataAtualizacao = dataAtualizacao;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
 	@Override

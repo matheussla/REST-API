@@ -1,23 +1,40 @@
 package com.mathe.restbanco.dto;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.mathe.restbanco.domain.Conta;
 
 public class ContaDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private String id;
+	@NotNull
+	@Pattern(regexp="[0-9]+", message = "just enter numbers")
+	@Size(min = 6, max = 6, message = "numero must be 6 digits")
 	private String numero;
+	@NotNull
+	@Pattern(regexp="[0-9]+", message = "just enter numbers")
+	@Size(min = 4, max = 4, message = "agencia must be 4 digits")
 	private String agencia;
+	@NotNull
+	@Pattern(regexp="[0-9]+", message = "just enter numbers")
+	@Size(min = 11, max = 11, message = "cpf must be 11 digits")
 	private String cpf;
 	private Boolean status;
-	private String dataCriacao;
-	private String dataAtualizacao;
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy HH:mm:ss")
+	private LocalDateTime dataCriacao;
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy HH:mm:ss")
+	private LocalDateTime dataAtualizacao;
 	
 	public ContaDTO() {
 	}
-
+    
 	public ContaDTO(Conta obj) {
 		id = obj.getId();
 		numero = obj.getNumero();
@@ -27,7 +44,7 @@ public class ContaDTO implements Serializable {
 		dataCriacao = obj.getDataCriacao();
 		dataAtualizacao = obj.getDataAtualizacao();	
 	}
-
+	
 	public String getId() {
 		return id;
 	}
@@ -68,19 +85,19 @@ public class ContaDTO implements Serializable {
 		this.status = status;
 	}
 
-	public String getDataCriacao() {
+	public LocalDateTime getDataCriacao() {
 		return dataCriacao;
 	}
 
-	public void setDataCriacao(String dataCriacao) {
+	public void setDataCriacao(LocalDateTime dataCriacao) {
 		this.dataCriacao = dataCriacao;
 	}
 
-	public String getDataAtualizacao() {
+	public LocalDateTime getDataAtualizacao() {
 		return dataAtualizacao;
 	}
 
-	public void setDataAtualizacao(String dataAtualizacao) {
+	public void setDataAtualizacao(LocalDateTime dataAtualizacao) {
 		this.dataAtualizacao = dataAtualizacao;
 	}
 	
