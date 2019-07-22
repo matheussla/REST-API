@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -14,12 +15,15 @@ public class ContaDTO implements Serializable {
 	
 	private String id;
 	@NotNull
+	@Pattern(regexp="[0-9]+", message = "just enter numbers")
 	@Size(min = 6, max = 6, message = "numero must be 6 digits")
 	private String numero;
 	@NotNull
+	@Pattern(regexp="[0-9]+", message = "just enter numbers")
 	@Size(min = 4, max = 4, message = "agencia must be 4 digits")
 	private String agencia;
 	@NotNull
+	@Pattern(regexp="[0-9]+", message = "just enter numbers")
 	@Size(min = 11, max = 11, message = "cpf must be 11 digits")
 	private String cpf;
 	private Boolean status;
@@ -30,7 +34,7 @@ public class ContaDTO implements Serializable {
 	
 	public ContaDTO() {
 	}
-
+    
 	public ContaDTO(Conta obj) {
 		id = obj.getId();
 		numero = obj.getNumero();
